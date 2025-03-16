@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { useRef, useEffect } from "react";
 
 function App(props) {
   // 添加任务
@@ -86,12 +87,31 @@ function App(props) {
     });
     setTasks(editedTaskList);
   }
+
+  // 删除任务后，将焦点调整至列表标题提示用户剩余多少待办任务
+  const listHeadingRef = useRef(null);
+  function usePrevious(value) {
+    const ref = useRef();
+    useEffect(() => {
+      ref.current = value;
+    });
+    return ref.current;
+  }
+  const prevTaskLength = usePrevious(tasks.length);
+  useEffect(() => {
+    if (tasks.length < prevTaskLength) {
+      listHeadingRef.current.focus();
+    }
+  }, [tasks.length, prevTaskLength]);
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">{filterList}</div>
-      <h2 id="list-heading">{headingText}</h2>
+      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+        {headingText}
+      </h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
