@@ -1,6 +1,5 @@
-
-import './App.css';
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
   const [number, setNumber] = useState(0);
@@ -8,21 +7,75 @@ function App() {
   return (
     <>
       <h1>{number}</h1>
-      <button onClick={() => { setNumber(number + 1); setNumber(number + 1); setNumber(number + 1); }}>+3</button>
+      <button
+        onClick={() => {
+          setNumber(number + 1);
+          setNumber(number + 1);
+          setNumber(number + 1);
+        }}
+      >
+        +3
+      </button>
 
-      <button onClick={() => { setNumber(number + 5); alert(number); }}>+5</button>
+      <button
+        onClick={() => {
+          setNumber(number + 5);
+          alert(number);
+        }}
+      >
+        +5
+      </button>
 
-      <button onClick={() => { setNumber(number + 10); setTimeout(() => alert(number), 3000) }}>+10</button>
+      <button
+        onClick={() => {
+          setNumber(number + 10);
+          setTimeout(() => alert(number), 3000);
+        }}
+      >
+        +10
+      </button>
 
       <h1>批处理 counter的使用</h1>
       <h2>{counter}</h2>
-      <button onClick={() => { setCounter(c => c + 1); setCounter(c => c + 1); setCounter(c => c + 1); }}>+3</button>
+      <button
+        onClick={() => {
+          setCounter((c) => c + 1);
+          setCounter((c) => c + 1);
+          setCounter((c) => c + 1);
+        }}
+      >
+        +3
+      </button>
 
-      <button onClick={() => { setCounter(counter + 5); setCounter(c => c + 5); alert(counter); }}>+5</button>
+      <button
+        onClick={() => {
+          setCounter(counter + 5);
+          setCounter((c) => c + 5);
+          alert(counter);
+        }}
+      >
+        +5
+      </button>
 
-      <button onClick={() => { setCounter(counter + 8); setCounter(c => c + 8); setCounter(42); alert(counter) }}>+8</button>
+      <button
+        onClick={() => {
+          setCounter(counter + 8);
+          setCounter((c) => c + 8);
+          setCounter(42);
+          alert(counter);
+        }}
+      >
+        +8
+      </button>
 
-      <button onClick={() => { setCounter(c => c + 10); setTimeout(() => alert(counter), 3000) }}>+10</button>
+      <button
+        onClick={() => {
+          setCounter((c) => c + 10);
+          setTimeout(() => alert(counter), 3000);
+        }}
+      >
+        +10
+      </button>
     </>
   );
 }
