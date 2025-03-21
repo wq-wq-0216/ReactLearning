@@ -6,7 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import UpdateObjectState from "./UpdateObjectState"; //默认导出
 import { UpdateObjectStateImmer } from "./UpdateObjectStateImmer"; //具名导出
 import UpdateArrayState from "./UpdateArrayState";
-import UpdateArrayStateImmer from "src/UpdateArrayStateImmer.js";
+import UpdateArrayStateImmer from "./UpdateArrayStateImmer";
+import SetState from "./SetState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +21,9 @@ root.render(
     {/* 这个讲述如何正确更新state中的数组 */}
     {/* {<UpdateArrayState />} */}
     {/* 这个讲述如何使用Immer正确更新state中的数组 */}
-    {<UpdateArrayStateImmer />}
+    {/* {<UpdateArrayStateImmer />} */}
+    {/* 这个讲述如何合理选择设置state */}
+    {<SetState />}
   </React.StrictMode>
 );
 
