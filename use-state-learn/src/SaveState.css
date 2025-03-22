@@ -1,0 +1,15 @@
+.counter {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.counter.hover {
+  background-color: lightblue;
+}
+
+.counter.fancy {
+  border: 2px solid gold;
+}

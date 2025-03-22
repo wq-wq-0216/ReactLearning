@@ -8,6 +8,8 @@ import { UpdateObjectStateImmer } from "./UpdateObjectStateImmer"; //具名导�
 import UpdateArrayState from "./UpdateArrayState";
 import UpdateArrayStateImmer from "./UpdateArrayStateImmer";
 import SetState from "./SetState";
+import SaveState from "./SaveState";
+import UseStateKey from "./UseStateKey";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,7 +25,11 @@ root.render(
     {/* 这个讲述如何使用Immer正确更新state中的数组 */}
     {/* {<UpdateArrayStateImmer />} */}
     {/* 这个讲述如何合理选择设置state */}
-    {<SetState />}
+    {/* {<SetState />} */}
+    {/* 这个讲述state的保留和重置 */}
+    {/* {<SaveState />} */}
+    {/* 这个讲述如何使用key来重置state */}
+    {<UseStateKey />}
   </React.StrictMode>
 );
 
