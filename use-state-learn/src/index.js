@@ -11,6 +11,8 @@ import SetState from "./SetState";
 import SaveState from "./SaveState";
 import UseStateKey from "./UseStateKey";
 
+import UseReducerLearn from "./UseReducerLearn/UseReducerLearn";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -29,7 +31,9 @@ root.render(
     {/* 这个讲述state的保留和重置 */}
     {/* {<SaveState />} */}
     {/* 这个讲述如何使用key来重置state */}
-    {<UseStateKey />}
+    {/* {<UseStateKey />} */}
+    {/* 这个用来讲述useReducer的使用 */}
+    {<UseReducerLearn />}
   </React.StrictMode>
 );
 
